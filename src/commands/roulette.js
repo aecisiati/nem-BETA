@@ -112,7 +112,7 @@ module.exports.run = async (bot, message, args) => {
                 .setThumbnail('https://media.discordapp.net/attachments/807343785763012672/816360814558314496/unknown.png?width=442&height=442')
                 .setColor("#c4f2cc")
                 .setTitle(`> ${member.user.username}'s roulette game <a:wheart:801471261066002432> <a:emoon:802256873327034428>`)
-                .setDescription(`*Let's see what you got!*\n\n> Colour: \`🟢\`  \n> **Multiplier:** **x5**  \n\n **Winnings:** **❀ ${betAmount.toLocaleString()}** coins`)
+                .setDescription(`*Let's see what you got!*\n╰─Winnings: **❀ ${betAmount.toLocaleString()}**\n\n> Colour: \`🟢\`  \n> **Multiplier:** **x5**`)
             message.channel.send(moneyEmbed1)
           
         } else if (isOdd(random) && colour == 1) { 
@@ -122,7 +122,7 @@ module.exports.run = async (bot, message, args) => {
                 .setThumbnail('https://media.discordapp.net/attachments/807343785763012672/816360814558314496/unknown.png?width=442&height=442')
                 .setTitle(`> ${member.user.username}'s roulette game <a:wheart:801471261066002432> <a:emoon:802256873327034428>`)
                 .setColor("#c4f2cc")
-                .setDescription(`*Let's see what you got!*\n\n> Colour: \`🔴\` \n> Multiplier: \`x1.5\`  \n\n **Winnings:** **❀ ${betAmount.toLocaleString()}** coins`);
+                .setDescription(`*Let's see what you got!*\n╰─Winnings: **❀ ${betAmount.toLocaleString()}**\n\n> Colour: \`🔴\` \n> Multiplier: \`x1.5\``);
             message.channel.send(moneyEmbed2)
           
           } else if (random == 1 && colour == 3) { 
@@ -132,7 +132,7 @@ module.exports.run = async (bot, message, args) => {
                 .setTitle(`> ${member.user.username}'s roulette game <a:wheart:801471261066002432> <a:emoon:802256873327034428>`)
                 .setThumbnail('https://media.discordapp.net/attachments/807343785763012672/816360814558314496/unknown.png?width=442&height=442')
                 .setColor("#c4f2cc")
-                .setDescription(`*Let's see what you got!*\n\n> Colour: \`🟡\` \n> Multiplier: \`x1.5\`  \n\n **Winnings:** **❀ ${betAmount.toLocaleString()}** coins`);
+                .setDescription(`*Let's see what you got!*\n╰─Winnings: **❀ ${betAmount.toLocaleString()}** coins\n\n> Colour: \`🟡\` \n> Multiplier: \`x1.5\``);
             message.channel.send(moneyEmbed4)
             
         } else if (!isOdd(random) && colour == 0) { 
@@ -162,7 +162,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     name: 'roulette', // Command Name
-    description: 'Gamble your coins away or gain big!', // Description
+    description: 'Choose a color and a bet amount. It will randomize your game. The more the multiplier, the higher the risk. Maybe the rewardings could be good, if you don\'t get so unlucky!', // Description
     usage: 'nem roulette', // Usage
     botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.

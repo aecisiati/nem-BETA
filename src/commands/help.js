@@ -100,7 +100,7 @@ module.exports.run = async (bot, message, args) => {
         },
         {
             name : "nem",
-            value: '[support server](https://discord.gg/MR5rjDv4TY) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
+            value: '[support server](https://discord.gg/6RMejTZZVB) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
             
         }
       )
@@ -146,7 +146,7 @@ module.exports.run = async (bot, message, args) => {
         },
         {
             name : "nem",
-            value: '[support server](https://discord.gg/MR5rjDv4TY) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
+            value: '[support server](https://discord.gg/6RMejTZZVB) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
             
         }
       )
@@ -192,7 +192,7 @@ module.exports.run = async (bot, message, args) => {
         },
         {
             name : "nem",
-            value: '[support server](https://discord.gg/MR5rjDv4TY) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
+            value: '[support server](https://discord.gg/6RMejTZZVB) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
             
         }
       )
@@ -253,7 +253,7 @@ module.exports.run = async (bot, message, args) => {
         },
         {
             name : "nem",
-            value: '[support server](https://discord.gg/MR5rjDv4TY) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
+            value: '[support server](https://discord.gg/6RMejTZZVB) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
             
         }
       )
@@ -284,7 +284,7 @@ module.exports.run = async (bot, message, args) => {
         },
         {
             name : "nem",
-            value: '[support server](https://discord.gg/MR5rjDv4TY) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
+            value: '[support server](https://discord.gg/6RMejTZZVB) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
             
         }
       )
@@ -315,7 +315,7 @@ module.exports.run = async (bot, message, args) => {
         },
         {
             name : "nem",
-            value: '[support server](https://discord.gg/MR5rjDv4TY) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
+            value: '[support server](https://discord.gg/6RMejTZZVB) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
             
         }
       )
@@ -363,7 +363,7 @@ module.exports.run = async (bot, message, args) => {
           },
           {
             name : "nem",
-            value: '[support server](https://discord.gg/MR5rjDv4TY) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
+            value: '[support server](https://discord.gg/6RMejTZZVB) | [invite nem](https://discord.com/api/oauth2/authorize?client_id=803683520001343528&permissions=8&scope=bot)',
             
           },
         )

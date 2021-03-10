@@ -255,11 +255,7 @@ module.exports.run = async(bot, message, args) => {
       const randomMessage = [
       'broom',
       'glass',
-      `mop`,
-      'mop',
-      'mop',
-      'mop',
-      'mop'
+      `mop`
       ]
       const response = randomMessage[Math.floor((Math.random() * randomMessage.length))];
       
@@ -403,13 +399,20 @@ module.exports.run = async(bot, message, args) => {
       const image = randomImage[Math.floor((Math.random() * randomImage.length))];
       const views = Math.round(Math.random() * 806948) + 2;
       const likes = Math.round(parseInt(views * 0.4))
-      const dislikes = Math.round(parseInt(views * 0.1))
+      const dislikes = Math.round(parseInt(views * 0.3))
       const earnings = Math.round(Math.random() * 150) + 1
+      const moreearnings = Math.round(Math.random() * 250) + 1
       const a = `Talking to Hobos (GONE WRONG)`
       const b = `Makeup Tutorial | How to become a loser!`
       const c = `Old Vines | Part #459593`
       const d =  `THERES A DEMON IN MY HOUSE!! | (Storytime)`
       const e = `My wife turned out to be my sister?!`
+      const randomThing = [ 
+              `success`,
+              `fail`,
+              `major`
+              ]
+      const ratings = randomThing[Math.floor((Math.random() * randomThing.length))];
 
       let stream = new MessageEmbed()
       .setTitle(`\`🌿\` ⏤・working...`)
@@ -425,50 +428,160 @@ module.exports.run = async(bot, message, args) => {
             message = message.first()
             if(message.content === 'a' || message.content === 'A')  {
                bot.giveJobHours(message.author.id, 1)
-              bot.giveCoins(message.author.id, 250 + earnings)
               let stream = new MessageEmbed()
               .setTitle(`\`🌿\` ⏤・working...`)
               .setColor('#f5da9f')
               .setImage(image)
-              .setDescription(`Title: **${a}**\n> *Views Gained:* **${views.toLocaleString()}**\n> *Likes:* **${likes.toLocaleString()}**\n> *Dislikes:* **${dislikes.toLocaleString()}**\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${earnings}** coins due to ad revenue!*`)
-              return message.channel.send(stream)
+              .setDescription(`Title: **${a}**\n> *Views Gained:* **${views.toLocaleString()}**\n> *Likes:* **${likes.toLocaleString()}**\n> *Dislikes:* **${dislikes.toLocaleString()}**`)
+              message.channel.send(stream).then(msg => {
+                if(ratings === 'success') { 
+                bot.giveCoins(message.author.id, earnings + 250)
+                let success = new MessageEmbed()
+               .setTitle(`\`🌿\` ⏤・working...`)
+               .setDescription(`Your fans loved your video!\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${earnings}** coins due to ad revenue!*`)
+               .setColor('#f5da9f')
+                  msg.channel.send(success)
+                } else if(ratings === 'fail') {
+                  bot.giveCoins(message.author.id, 250)
+                  let fail = new MessageEmbed()
+                .setTitle(`\`🌿\` ⏤・working...`)
+                .setDescription(`Your fans **HATED** your video!\n╰─*You earned **❀ 250** coins without a bonus!*`)
+                .setColor('#f5da9f')
+                msg.channel.send(fail)
+                } else if(ratings === 'major') {
+                  bot.giveCoins(message.author.id, moreearnings + 250)
+                  let major = new MessageEmbed()
+               .setTitle(`\`🌿\` ⏤・working...`)
+               .setDescription(`Your fans **REALLY LOVED** your video!\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${moreearnings}** coins due to ad revenue!*`)
+               .setColor('#f5da9f')
+                msg.channel.send(major)
+                }
+              }) 
               
             } else if(message.content === 'b' || message.content === 'B') {
-              bot.giveCoins(message.author.id, 250 + earnings)
                bot.giveJobHours(message.author.id, 1)
               let stream = new MessageEmbed()
               .setTitle(`\`🌿\` ⏤・working...`)
               .setColor('#f5da9f')
               .setImage(image)
               .setDescription(`Title: **${b}**\n> *Views Gained:* **${views.toLocaleString()}**\n> *Likes:* **${likes.toLocaleString()}**\n> *Dislikes:* **${dislikes.toLocaleString()}**\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${earnings}** coins due to ad revenue!*`)
-              return message.channel.send(stream)
-            } else if(message.content === 'c' || message.content === 'C') { 
-              bot.giveCoins(message.author.id, 250 + earnings)
+              message.channel.send(stream).then(msg => {
+                if(ratings === 'success') { 
+                bot.giveCoins(message.author.id, earnings + 250)
+                let success = new MessageEmbed()
+               .setTitle(`\`🌿\` ⏤・working...`)
+               .setDescription(`Your fans loved your video!\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${earnings}** coins due to ad revenue!*`)
+               .setColor('#f5da9f')
+                  msg.channel.send(success)
+                } else if(ratings === 'fail') {
+                  bot.giveCoins(message.author.id, 250)
+                  let fail = new MessageEmbed()
+                .setTitle(`\`🌿\` ⏤・working...`)
+                .setDescription(`Your fans **HATED** your video!\n╰─*You earned **❀ 250** coins without a bonus!*`)
+                .setColor('#f5da9f')
+                msg.channel.send(fail)
+                } else if(ratings === 'major') {
+                  bot.giveCoins(message.author.id, moreearnings + 250)
+                  let major = new MessageEmbed()
+               .setTitle(`\`🌿\` ⏤・working...`)
+               .setDescription(`Your fans **REALLY LOVED** your video!\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${moreearnings}** coins due to ad revenue!*`)
+               .setColor('#f5da9f')
+                msg.channel.send(major)
+                }
+              }) 
+            } else if(message.content === 'c' || message.content === 'C') {
                bot.giveJobHours(message.author.id, 1)
               let stream = new MessageEmbed()
               .setTitle(`\`🌿\` ⏤・working...`)
               .setColor('#f5da9f')
               .setImage(image)
               .setDescription(`Title: **${c}**\n> *Views Gained:* **${views.toLocaleString()}**\n> *Likes:* **${likes.toLocaleString()}**\n> *Dislikes:* **${dislikes.toLocaleString()}**\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${earnings}** coins due to ad revenue!*`)
-              return message.channel.send(stream)
+              message.channel.send(stream).then(msg => {
+                if(ratings === 'success') { 
+                bot.giveCoins(message.author.id, earnings + 250)
+                let success = new MessageEmbed()
+               .setTitle(`\`🌿\` ⏤・working...`)
+               .setDescription(`Your fans loved your video!\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${earnings}** coins due to ad revenue!*`)
+               .setColor('#f5da9f')
+                  msg.channel.send(success)
+                } else if(ratings === 'fail') {
+                  bot.giveCoins(message.author.id, 250)
+                  let fail = new MessageEmbed()
+                .setTitle(`\`🌿\` ⏤・working...`)
+                .setDescription(`Your fans **HATED** your video!\n╰─*You earned **❀ 250** coins without a bonus!*`)
+                .setColor('#f5da9f')
+                msg.channel.send(fail)
+                } else if(ratings === 'major') {
+                  bot.giveCoins(message.author.id, moreearnings + 250)
+                  let major = new MessageEmbed()
+               .setTitle(`\`🌿\` ⏤・working...`)
+               .setDescription(`Your fans **REALLY LOVED** your video!\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${moreearnings}** coins due to ad revenue!*`)
+               .setColor('#f5da9f')
+                msg.channel.send(major)
+                }
+              }) 
             } else if(message.content === 'd' || message.content === 'D') {
-              bot.giveCoins(message.author.id, 250 + earnings)
                bot.giveJobHours(message.author.id, 1)
               let stream = new MessageEmbed()
               .setTitle(`\`🌿\` ⏤・working...`)
               .setColor('#f5da9f')
               .setImage(image)
               .setDescription(`Title: **${d}**\n> *Views Gained:* **${views.toLocaleString()}**\n> *Likes:* **${likes.toLocaleString()}**\n> *Dislikes:* **${dislikes.toLocaleString()}**\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${earnings}** coins due to ad revenue!*`)
-              return message.channel.send(stream)
+              message.channel.send(stream).then(msg => {
+                if(ratings === 'success') { 
+                bot.giveCoins(message.author.id, earnings + 250)
+                let success = new MessageEmbed()
+               .setTitle(`\`🌿\` ⏤・working...`)
+               .setDescription(`Your fans loved your video!\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${earnings}** coins due to ad revenue!*`)
+               .setColor('#f5da9f')
+                  msg.channel.send(success)
+                } else if(ratings === 'fail') {
+                  bot.giveCoins(message.author.id, 250)
+                  let fail = new MessageEmbed()
+                .setTitle(`\`🌿\` ⏤・working...`)
+                .setDescription(`Your fans **HATED** your video!\n╰─*You earned **❀ 250** coins without a bonus!*`)
+                .setColor('#f5da9f')
+                msg.channel.send(fail)
+                } else if(ratings === 'major') {
+                  bot.giveCoins(message.author.id, moreearnings + 250)
+                  let major = new MessageEmbed()
+               .setTitle(`\`🌿\` ⏤・working...`)
+               .setDescription(`Your fans **REALLY LOVED** your video!\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${moreearnings}** coins due to ad revenue!*`)
+               .setColor('#f5da9f')
+                msg.channel.send(major)
+                }
+              }) 
             } else if(message.content === 'e' || message.content === 'E') {
-              bot.giveCoins(message.author.id, 250 + earnings)
                bot.giveJobHours(message.author.id, 1)
               let stream = new MessageEmbed()
               .setTitle(`\`🌿\` ⏤・working...`)
               .setColor('#f5da9f')
               .setImage(image)
               .setDescription(`Title: **${e}**\n> *Views Gained:* **${views.toLocaleString()}**\n> *Likes:* **${likes.toLocaleString()}**\n> *Dislikes:* **${dislikes.toLocaleString()}**\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${earnings}** coins due to ad revenue!*`)
-              return message.channel.send(stream)
+              message.channel.send(stream).then(msg => {
+                if(ratings === 'success') { 
+                bot.giveCoins(message.author.id, earnings + 250)
+                let success = new MessageEmbed()
+               .setTitle(`\`🌿\` ⏤・working...`)
+               .setDescription(`Your fans loved your video!\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${earnings}** coins due to ad revenue!*`)
+               .setColor('#f5da9f')
+                  msg.channel.send(success)
+                } else if(ratings === 'fail') {
+                  bot.giveCoins(message.author.id, 250)
+                  let fail = new MessageEmbed()
+                .setTitle(`\`🌿\` ⏤・working...`)
+                .setDescription(`Your fans **HATED** your video!\n╰─*You earned **❀ 250** coins without a bonus!*`)
+                .setColor('#f5da9f')
+                msg.channel.send(fail)
+                } else if(ratings === 'major') {
+                  bot.giveCoins(message.author.id, moreearnings + 250)
+                  let major = new MessageEmbed()
+               .setTitle(`\`🌿\` ⏤・working...`)
+               .setDescription(`Your fans **REALLY LOVED** your video!\n╰─*You earned **❀ 250** coins + a bonus of **❀ ${moreearnings}** coins due to ad revenue!*`)
+               .setColor('#f5da9f')
+                msg.channel.send(major)
+                }
+              }) 
             } else {
               let yay = new MessageEmbed()
               .setTitle(`\`🌿\` ⏤・canceled.`)
@@ -484,6 +597,11 @@ module.exports.run = async(bot, message, args) => {
           .setDescription(`You took too long to answer!`);
           return message.channel.send(timeout).catch();
         })
+      } else if(dev) {
+        const embed = new MessageEmbed()
+        .setTitle(`\`🌿\` ⏤・working...`)
+        .setDescription(`Generating some code.....`)
+        message.channel.send(embed)
       }
     user.save().then(user.workStreak = new Date(Date.now()))
     }
@@ -530,7 +648,7 @@ module.exports.run = async(bot, message, args) => {
               } else if ((Date.parse(user.fired) + 1800000) > Date.now()) {
               const embed = new MessageEmbed()
                   .setTitle('> slow down!! <a:panic:805883559981744199> <a:wrhibud8:802298776308023316>')
-                  .setDescription(`You were fired from a job recently!\n╰─*You can apply for this job again in : \`${prettyMilliseconds((Date.parse(user.fired) + 1800000) - Date.now())}\`.*`)
+                  .setDescription(`You were fired from a job recently!\n╰─*You can apply for a job again in : \`${prettyMilliseconds((Date.parse(user.fired) + 1800000) - Date.now())}\`.*`)
                   .setColor("#f5da9f")
               return message.channel.send(embed); 
               } else {

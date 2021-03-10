@@ -21,9 +21,10 @@ module.exports.run = async (bot, message, args) => {
       .addFields(
         {
           name: `Pets`,
-          value: `${fwog} **Beta Fwog** — [ω 1](https://www.youtube.com/watch?v=Cna9OLn20Ac) ([***LIMITED TIME TO ADOPT!***](https://www.youtube.com/watch?v=Hu0KpdW4U0c))\nFwog is special, Fwog is cute.\nID — \`fwog\`\n\n${bun} **Bunny** — [ω 250](https://www.youtube.com/watch?v=Cna9OLn20Ac)\nBunnies are adorable and helpful!\nID — \`bunny\`\n\n${pen} **Penguin** — [ω 600](https://www.youtube.com/watch?v=Cna9OLn20Ac)\nAlways careful, and there to lend a hand.\nID — \`penguin\`\n\n${hedge} **Hedgehog** — [ω 1500](https://www.youtube.com/watch?v=Cna9OLn20Ac)\nHedgehogs will always be there to protect you!\nID — \`hedgehog\``,
+          value: `${fwog} **Beta Fwog** — [ω 1](https://www.youtube.com/watch?v=Cna9OLn20Ac)\nFwog is special, fwog is cute.\n\n${bun} **Bunny** — [ω 250](https://www.youtube.com/watch?v=Cna9OLn20Ac)\nBunnies are adorable and helpful!\nID — \`bunny\`\n\n${pen} **Penguin** — [ω 600](https://www.youtube.com/watch?v=Cna9OLn20Ac)\nAlways careful, and there to lend a hand.\nID — \`penguin\`\n\n${hedge} **Hedgehog** — [ω 1500](https://www.youtube.com/watch?v=Cna9OLn20Ac)\nHedgehogs will always be there to protect you!\nID — \`hedgehog\``,
           inline: true
         }
+        
       )
 
     const embed2 = new MessageEmbed()

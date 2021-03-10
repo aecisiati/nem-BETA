@@ -11,7 +11,7 @@ const gc = '<:goldcoin:812000208253616149>' // :HYDRA_GOLD_COIN_GIF:
 const sc = '<:silvercoin:812000207956869170>' // :HYDRA_SILVER_COIN_GIF:
 const bc = '<:bronzecoin:812000207960145942>' // :HYDRA_BRONZE_COIN_GIF: 
 const ht = '<:f_trophy:816697809448468480>' // :HYDRA_THROPHY:
-const hc = '<:i_leaf:812371493689622629>'
+const hc = '<:f_clover:816402071452385312>'
 const rod = '<:f_pole:816408922516750417>'
 const dyn = '<:f_dynamite:816710512405381181>'
 
@@ -19,7 +19,7 @@ const array = [{
     name: 'cookie',
     description: `${cooki} **Cookie**`,
     canUse: true,
-    canBuy: true,
+    canBuy: false,
     displayOnShop: true,
     sellAmount: 10,
     type: 'Power-Up',
@@ -33,7 +33,8 @@ const array = [{
         const cookieRandom = [
             `You stuffed the cookie in your face and achieved enlightenment. You gained **❀ ${randomAmount}** coins.`,
             `You choked on a cookie and almost died from a heart attack. At least you choked out **❀ ${randomAmount}** coins.`,
-            `The cookie tasted pleasant, until you found out the chocolate chips were made from rabbit droppings. Nem handed you **❀ ${randomAmount}** coins for pity.`
+            `The cookie tasted pleasant, until you found out the chocolate chips were made from rabbit droppings. Nem handed you **❀ ${randomAmount}** coins for pity.`,
+            `Your fish ate the cookie. Yeah, thats right. Gobbled it up like a chicken. The fish died and you found **❀ ${randomAmount}** coins in it?`
         ];
         const yes = cookieRandom[Math.floor(Math.random() * cookieRandom.length)];
         message.channel.send(`${yes}`);
@@ -142,15 +143,15 @@ const array = [{
     name: 'banknote',
     description: `${note} **Bank Note**`,
     canUse: true,
-    canBuy: true,
-    displayOnShop: true,
-    sellAmount: 6667,
+    canBuy: false,
+    displayOnShop: false,
+    sellAmount: 15000,
     price: 20000,
     type: 'Power-Up',
     keep: false,
     run: async (bot, message, args) => {
         const random = Math.ceil((Math.random() * 5000) + 10000);
-        const e = await bot.giveBankSpace(message.author.id, random);
+        const embed = new MessageEmbed()
         message.channel.send(`You redeemed a banknote, which increased your bank space by **${random.toLocaleString()}**! You now have **${e.bankSpace.toLocaleString()}** bank space.`);
     }
 }, 
@@ -546,6 +547,172 @@ const array = [{
     run: async (bot, message, args) => {
       
     }
+},
+{
+  name: 'nem',
+  description: `<:f_loot:817826100121829406> **Nem Box**`,
+  canUse: true,
+  canBuy: false,
+  displayOnShop: false,
+  sellAmount: 5500,
+  price: 1,
+  type: 'Loot Box',
+  keep: false,
+  run: async (bot, message, args) => {
+
+  let randomItems = [
+    `banknote`,
+    `lucky`,
+    `fishingpole`, 
+    `dynamite`
+    
+  ]
+
+  const response = randomItems[Math.floor((Math.random() * randomItems.length))];
+  const randomcoins = Math.round(Math.random() * 12000) + 2000;
+  const data = await bot.fetchUser(message.author.id)
+
+  const embed = new MessageEmbed()
+  .setTitle(`\`🌿\` ⏤・loot box`)
+  .setColor('#f5da9f')
+  .setDescription(`Opening a <:f_loot:817826100121829406> **Nem Box**....`)
+  message.channel.send(embed).then(msg => {
+    msg.delete({ timeout: 2000 }).then(msg => {
+      if(response === 'banknote') {
+        const embed2 = new MessageEmbed()
+        .setTitle(`\`🌿\` ⏤・loot box`)
+        .setColor('#f5da9f')
+        .setDescription(`You successfully claimed.. \n\`1\` ${note} **Bank Note**\n\`${randomcoins}\` ❀ coins`)
+        msg.channel.send(embed2)
+        bot.giveCoins(message.author.id, randomcoins)
+         const findItem = data.items.find(i => i.name.toLowerCase() == 'banknote');
+                let userInv = data.items.filter(i => i.name.toLowerCase() !== 'banknote');
+                if (findItem) {
+                userInv.push({ name: 'banknote', amount: 1, description: `${note} **Bank Note**`, type: `Power-Up` });
+                data.items = userInv;
+                data.save();
+                } else {
+                userInv.push({ name: 'banknote', amount: 1, description: `${note} **Bank Note**`, type: `Power-Up` });
+                data.items = userInv;
+                data.save();
+                }
+       
+      } else if(response === 'lucky') {
+        const embed2 = new MessageEmbed()
+        .setTitle(`\`🌿\` ⏤・loot box`)
+        .setColor('#f5da9f')
+        .setDescription(`You successfully claimed.. \n\`1\` ${hc} **Lucky Clover**\n\`${randomcoins}\` ❀ coins`)
+        msg.channel.send(embed2)
+        bot.giveCoins(message.author.id, randomcoins)
+         const findItem = data.items.find(i => i.name.toLowerCase() == 'luckyclover');
+                let userInv = data.items.filter(i => i.name.toLowerCase() !== 'luckyclover');
+                if (findItem) {
+                userInv.push({ name: 'luckyclover', amount: (findItem.amount + 1), description: `${hc} **Lucky Clover**`, type: `Power-Up` });
+                data.items = userInv;
+                data.save();
+                } else {
+                userInv.push({ name: 'luckyclover', amount: 1, description: `${hc} **Lucky Clover**`, type: `Power-Up` });
+                data.items = userInv;
+                data.save();
+                }
+        
+      } else if(response === `fishingpole`) {
+        const embed2 = new MessageEmbed()
+        .setTitle(`\`🌿\` ⏤・loot box`)
+        .setColor('#f5da9f')
+        .setDescription(`You successfully claimed.. \n\`1\` ${rod} **Fishing Rod**\n\`${randomcoins}\` ❀ coins`)
+        msg.channel.send(embed2)
+        bot.giveCoins(message.author.id, randomcoins)
+         const findItem = data.items.find(i => i.name.toLowerCase() == 'fishingrod');
+                let userInv = data.items.filter(i => i.name.toLowerCase() !== 'fishingrod');
+                if (findItem) {
+                userInv.push({ name: 'fishingrod', amount: (findItem.amount + 1), description: `${rod} **Fishing Rod**`, type: `Tool` });
+                data.items = userInv;
+                data.save();
+                } else {
+                userInv.push({ name: `fishingrod`, amount: 1, description: `${rod} **Fishing Rod**`, type: `Tool` });
+                data.items = userInv;
+                data.save();
+                }
+        
+      } else if(response === 'dynamite') {
+        const embed2 = new MessageEmbed()
+        .setTitle(`\`🌿\` ⏤・loot box`)
+        .setColor('#f5da9f')
+        .setDescription(`You successfully claimed.. \n\`1\` ${dyn} **Dynamite**\n\`${randomcoins}\` ❀ coins`)
+        msg.channel.send(embed2)
+        bot.giveCoins(message.author.id, randomcoins)
+         const findItem = data.items.find(i => i.name.toLowerCase() == 'dynamite');
+                let userInv = data.items.filter(i => i.name.toLowerCase() !== 'dynamite');
+                if (findItem) {
+                userInv.push({ name: 'dynamite', amount: (findItem.amount + 1), description: `${dyn} **Dynamite**`, type: `Tool` });
+                data.items = userInv;
+                data.save();
+                } else {
+                userInv.push({ name: `dynamite`, amount: 1, description: `${dyn} **Dynamite**`, type: `Tool` });
+                data.items = userInv;
+                data.save();
+                }
+    
+      }
+    })
+  })
+      
+  }
+},
+{
+  name: `cellphone`,
+  description: `<:f_phone:817834846432919605> **Cellphone**`,
+  canUse: true,
+  canBuy: false,
+  displayOnShop: true,
+  sellAmount: 200,
+  price: 2000,
+  type: 'Tool',
+  keep: true,
+  run: async (bot, message, args) => {
+    const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(member => member.user.username.toLowerCase() === args.join(' ').toString().toLowerCase()) || message.guild.members.cache.find(member => member.user.username === args.slice(0).join(' ') || member.user.username === args[0]) || message.member;
+    const user = message.author;
+
+     const embed2 = new MessageEmbed()
+        .setTitle(`\`🌿\` ⏤・cellphone`)
+        .setColor('#f5da9f')
+        .setDescription(`**What do you want to do with your phone?**\n***\`A\`*** - *Call the police.*\n***\`B\`*** - *Create a reminder.*\n***\`C\`*** - *Send a text to someone.*\n***\`D\`*** - *Cancel this option.*\n╰─*Have fun annoying people.*`)
+        message.channel.send(embed2)
+        let filter = m => m.author.id === message.author.id;
+        message.channel.awaitMessages(filter, {
+            max: 1,
+            time: 30000,
+            errors: ['time']
+        }).then(async message => {
+            message = message.first()
+            if(message.content === 'a' || message.content === 'A') {
+              const embed = new MessageEmbed()
+              .setTitle(`\`🌿\` ⏤・cellphone`)
+              .setColor('#f5da9f')
+              .setDescription(`> **Currently dialing 911....**`)
+              message.channel.send(embed).then(async msg => {
+                setTimeout(function() {
+                  embed.setDescription(`> **${user.username}:** *Help! I've been robbed! Please help me...!!*`)
+                        msg.edit(embed)
+                    }, 1000);
+                    setTimeout(function() {
+                      embed.setDescription(`> **${user.username}:** *Help! I've been robbed! Please help me...!!*\n> **Police:** *We have searched around the premises and there is no sign of a bank robbery.*\n╰─***You will be fined shortly for disrupting our services.***`)
+                        msg.edit(embed)
+                    }, 2000)
+              
+                })
+
+            }
+        }).catch(_ => {
+          let timeout = new MessageEmbed()
+          .setColor("#eda098")
+          .setTitle(`> uh oh... <:girlhmmthink:804652502951395368>`)
+          .setDescription(`You took too long to answer!`);
+          return message.channel.send(timeout).catch();
+        })
+
+  }
 }
 ];
 

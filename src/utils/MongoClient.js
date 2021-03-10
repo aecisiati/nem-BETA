@@ -9,7 +9,7 @@ const JobManager = require('./JobManager');
 class MongoClient extends Client {
     constructor() {
         super();
-        mongoose.connect('mongodb+srv://aecisiati:Onceupon1@nem.df5le.mongodb.net/aecisiati?retryWrites=true&w=majority', {
+        mongoose.connect('mongodb+srv://aecisiati:Onceupon1@nem.df5le.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
             useUnifiedTopology : true,
             useNewUrlParser : true,
         }).then(console.log('connected to mongodb!'))
@@ -350,7 +350,7 @@ class MongoClient extends Client {
                 userId: userId,
                 items: [],
                 jobs: [],
-                pets: [],
+                pets: []
                 
             });
             newUser.save();
@@ -370,7 +370,7 @@ class MongoClient extends Client {
                 userId: userId,
                 items: [],
                 jobs: [],
-                pets: [],
+                pets: []
                 
             });
             newUser.save();

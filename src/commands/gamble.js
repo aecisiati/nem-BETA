@@ -24,6 +24,14 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(`Please enter the amount you want to gamble. `);
 
     if (!betAmount || isNaN(betAmount) && betAmount !== 'all' && betAmount !== 'max') return message.channel.send(coinswarn);
+
+    if(betAmount > 150000) {
+      let coinmin = new MessageEmbed()
+    .setColor("#eda098")
+    .setTitle(`> uh oh... <:girlhmmthink:804652502951395368>`)
+    .setDescription(`The maxiumum you can gamble is \`150k\` coins.`);
+    }
+
   
     let coinmin = new MessageEmbed()
     .setColor("#eda098")
@@ -31,8 +39,11 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(`The minimum you can gamble is \`100\` coins.`);
 
            if (betAmount < 100) return message.channel.send(coinmin);
-    if (betAmount == 'all' || betAmount == 'max') betAmount=userData.coinsInWallet;
-    else betAmount=parseInt(args[0]);
+    if (betAmount == 'all' || betAmount == 'max') {
+      betAmount=userData.coinsInWallet;
+    } else  {
+      betAmount=parseInt(args[0]);
+    }
   
     let moneywarn = new MessageEmbed()
     .setColor("#eda098")
@@ -113,7 +124,7 @@ module.exports.run = async (bot, message, args) => {
 }   
 module.exports.config = {
     name: 'gamble', // Command Name
-    description: 'Gain a whole ton of coins, or lose all your life savings!', // Description
+    description: 'Gain a whole ton of coins, or lose all your life savings! Input your bet amount, and nem will randomly choose between you winning or losing.', // Description
     usage: 'nem gamble <amount>', // Usage
     botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.

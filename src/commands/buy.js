@@ -24,15 +24,18 @@ module.exports.run = async (bot, message, args) => {
             return message.channel.send(wrongiderrorembed).catch();
         //return message.channel.send("You can't buy an item that doesn't exist please use the correct item id");
     }
+
     if (item.canBuy == false) {
             let cantbuyerrorembed = new MessageEmbed()
             .setColor("#eda098")
             .setTitle('> hmmmm.... <a:wheart:801471261066002432> <:girlhmmthink:804652502951395368>')
             .setDescription(`I'm sorry, this item isn't able to be purchased!`);
 
-            return message.channel.send(cantbuyerrorembed).catch();
-        //return message.channel.send(":thinking: You can't buy this item");
+            return message.channel.send(cantbuyerrorembed);
+
     }
+        //return message.channel.send(":thinking: You can't buy this item");
+
     let buyAmount = args.join(' ').toString().match(/([1-9][0-9]*)/)
     if (!buyAmount) buyAmount=1;
     else buyAmount = buyAmount[0]

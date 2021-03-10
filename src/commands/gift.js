@@ -6,10 +6,11 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
   const usertag = message.member;
-    const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(member => member.user.username === args.slice(0).join(' ') || member.user.username === args[0]);
+    const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(member => member.user.username.toLowerCase() === args.join(' ').toString().toLowerCase()) || message.guild.members.cache.find(member => member.user.username === args.slice(0).join(' ') || member.user.username === args[0]) || message.member;
     const authorData = await bot.fetchUser(message.author.id);
     const memberData = await bot.fetchUser(member.id)
 
+    
     let passivewarn2 = new MessageEmbed()
     .setColor("#eda098")
     .setTitle('> hmmmm.... <a:wheart:801471261066002432> <:girlhmmthink:804652502951395368>')
@@ -87,7 +88,7 @@ module.exports.run = async (bot, message, args) => {
     let userArray = userData.items.filter(i => i.name.toLowerCase() !== authoItem.name.toLowerCase());
 
     if (!userItem) {
-        userArray.push({ name: itemToGive.name.toString(), amount: parseInt(giveAmount), description: itemToGive.description, type: itemToGive.type });
+        userArray.push({ name: itemToGive.name.toString(), amount: parseInt(giveAmount), description: itemToGive.description, type: itemToGive.type});
         userData.items = userArray;
     } else {
         userArray.push({ name: itemToGive.name.toString(), amount: (parseInt(userItem.amount) + parseInt(giveAmount)), description: itemToGive.description, type: itemToGive.type });

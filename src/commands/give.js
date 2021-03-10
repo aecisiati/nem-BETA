@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
 
     }
     const authorData = await bot.fetchUser(message.author.id);
-    const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(member => member.user.username === args.slice(0).join(' ') || member.user.username === args[0]);
+    const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(member => member.user.username.toLowerCase() === args.join(' ').toString().toLowerCase()) || message.guild.members.cache.find(member => member.user.username === args.slice(0).join(' ') || member.user.username === args[0]) 
     const memberData = await bot.fetchUser(member.id)
 
     let passivewarn = new MessageEmbed()
