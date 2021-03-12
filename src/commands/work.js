@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
   if (args[0] === "list") {
     let listembed = new MessageEmbed()
       .setColor("#f5da9f")
-      .setTitle(`\`🌿\` ⏤・ work list`)
+      .setTitle(`> \`🌿\` ⏤・ work list`)
       .setDescription(`To select a job, do \`nem work <job-name>\``)
       .setThumbnail(
         "https://media.discordapp.net/attachments/816416430303739967/816902783214026792/unknown.png?width=442&height=442"
