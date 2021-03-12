@@ -69,7 +69,7 @@ module.exports.config = {
     name: 'disown', // Command Name
     description: 'Disown your sad, lonely pet in exchange for a better one! :O', // Description
     usage: 'nem disown <pet id>', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 10, // Amount of bank space to give when command is used.

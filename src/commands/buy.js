@@ -86,7 +86,7 @@ module.exports.config = {
     name: 'buy', // Command Name
     description: 'Purchase items from the shop!', // Description
     usage: 'nem buy <item id>', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 0, // Amount of bank space to give when command is used.

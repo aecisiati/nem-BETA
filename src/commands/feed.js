@@ -469,7 +469,7 @@ module.exports.config = {
     name: 'feed', // Command Name
     description: 'Feed your pet so their happiness doesn\'t decrease!', // Description
     usage: 'nem feed <pet id> <food>', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 10, // Amount of bank space to give when command is used.

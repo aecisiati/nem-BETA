@@ -149,7 +149,7 @@ module.exports.config = {
     name: 'mine', // Command Name
     description: 'Use your pickaxe to find some gems.', // Description
     usage: 'nem mine', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 5, // Amount of bank space to give when command is used.

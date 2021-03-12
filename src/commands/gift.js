@@ -115,7 +115,7 @@ module.exports.config = {
     name: 'gift', // Command Name
     description: 'Gift an item to an enemy or a friend!', // Description
     usage: 'nem gift <item id> <user>', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 7, // Amount of bank space to give when command is used.

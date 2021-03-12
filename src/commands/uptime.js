@@ -11,7 +11,7 @@ module.exports.config = {
     name: 'uptime',
     description: 'See the bot\'s uptime',
     usage: 'nem uptime',
-    botPerms: [],
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'],
     userPerms: [],
     aliases: [],
     bankSpace: 1,

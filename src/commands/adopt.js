@@ -86,7 +86,7 @@ module.exports.config = {
     name: 'adopt', // Command Name
     description: 'Purchase pets from the shop. You can take care of it, play with it and much more! Hopefully you dont disown your pet.', // Description
     usage: 'nem adopt <pet id>', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'],// Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 0, // Amount of bank space to give when command is used.

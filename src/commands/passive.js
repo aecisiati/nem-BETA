@@ -71,7 +71,7 @@ module.exports.config = {
     name: 'passive', // Command Name
     description: 'Enable / disable passive mode so robbers cant get to your wealth!', // Description
     usage: 'nem passive <on or off>', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 2, // Amount of bank space to give when command is used.

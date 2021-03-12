@@ -120,7 +120,7 @@ module.exports.config = {
     name: 'beg', // Command Name
     description: 'Allows you to beg people for coins like the hobo you are.', // Description
     usage: 'nem beg', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 130, // Amount of bank space to give when command is used.

@@ -15,7 +15,7 @@ module.exports.config = {
     name: 'ping', // Command Name
     description: 'Displays nems ping!', // Description
     usage: 'nem ping', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 0, // Amount of bank space to give when command is used.

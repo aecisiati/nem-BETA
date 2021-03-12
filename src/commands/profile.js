@@ -51,7 +51,7 @@ module.exports.config = {
     name: 'profile', // Command Name
     description: 'See your profile or others.', // Description
     usage: 'nem profile', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI', 'ATTACH_FILES'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: ['userinfo'], // Aliases 
     bankSpace: 2, // Amount of bank space to give when command is used.

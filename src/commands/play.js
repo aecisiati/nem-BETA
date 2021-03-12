@@ -402,7 +402,7 @@ module.exports.config = {
     name: 'play', // Command Name
     description: 'Feed your pet so their happiness doesn\'t decrease!', // Description
     usage: 'nem play <pet id>', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 50, // Amount of bank space to give when command is used.

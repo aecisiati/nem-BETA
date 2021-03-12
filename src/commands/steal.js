@@ -27,7 +27,7 @@ module.exports.config = {
     name: 'steal', // Command Name
     description: 'Steal an emoji to add to your server!', // Description
     usage: 'nem steal <emoji>', // Usage
-    botPerms: ['MANAGE_EMOJIS'], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI', 'MANAGE_EMOJIS'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: ['MANAGE_EMOJIS'], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 0, // Amount of bank space to give when command is used.

@@ -49,7 +49,7 @@ module.exports.config = {
     name: 'rich', // Command Name
     description: 'shows the richest people in your server!', // Description
     usage: 'nem rich', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI', 'ATTACH_FILES'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: ['leader', 'lb', 'leaderboard'], // Aliases 
     bankSpace: 1, // Amount of bank space to give when command is used.

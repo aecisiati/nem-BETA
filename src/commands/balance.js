@@ -29,7 +29,7 @@ module.exports.config = {
     name: 'balance',
     description: 'View yours or another user\'s balance! This displays your wallet, bank, and how much space you have in your bank currently.',
     usage: 'nem balance (user)',
-    botPerms: [],
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'],
     userPerms: [],
     aliases: ['bal', 'bank'],
     bankSpace: 0,

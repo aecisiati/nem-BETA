@@ -69,7 +69,7 @@ module.exports.config = {
     name: 'withdraw', // Command Name
     description: 'Withdraws money from your bank.', // Description
     usage: 'nem withdraw <amount>', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: ['with'], // Aliases 
     bankSpace: 3, // Amount of bank space to give when command is used.

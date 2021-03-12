@@ -89,7 +89,7 @@ module.exports.config = {
     name: 'slots', // Command Name
     description: 'Gamble your coins away or gain big.', // Description
     usage: 'nem slots', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI', 'ATTACH_FILES'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: ['slot'], // Aliases 
     bankSpace: 13, // Amount of bank space to give when command is used.

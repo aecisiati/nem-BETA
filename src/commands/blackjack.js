@@ -305,7 +305,7 @@ module.exports.config = {
     name: 'blackjack', // Command Name
     description: 'Gamble your money away! To play, try to get the highest number and avoid from going past 21. If you do, you lose the gamble and your bet. The max to bet is 200k coins, and the least is 100 coins. Type words such as "hit, h, stand, s," to play the game.', // Description
     usage: 'nem bj', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI', 'ATTACH_FILES'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: ['bj', 'blackjack'], // Aliases 
     bankSpace: 100, // Amount of bank space to give when command is used.

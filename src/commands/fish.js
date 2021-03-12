@@ -284,7 +284,7 @@ module.exports.config = {
     name: 'fish', // Command Name
     description: 'Fish random items from the shore! Catch a whale, or catch a tire! Who knows?', // Description
     usage: 'nem fish', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 100, // Amount of bank space to give when command is used.

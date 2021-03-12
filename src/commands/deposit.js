@@ -101,7 +101,7 @@ module.exports.config = {
     name: 'deposit', // Command Name
     description: 'Deposit money into your bank to prevent robbers from stealing your hard earned cash!', // Description
     usage: 'nem deposit <amount>', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: ['dep'], // Aliases 
     bankSpace: 0, // Amount of bank space to give when command is used.

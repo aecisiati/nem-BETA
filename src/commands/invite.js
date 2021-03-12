@@ -12,7 +12,7 @@ module.exports.config = {
     name: 'invite', // Command Name
     description: 'Invite nem to your server!', // Description
     usage: 'nem invite', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: [], // Aliases 
     bankSpace: 2, // Amount of bank space to give when command is used.

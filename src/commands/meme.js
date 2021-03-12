@@ -20,7 +20,7 @@ module.exports.config = {
     name: 'meme', // Command Name
     description: 'Some unfunny memes :P', // Description
     usage: 'nem meme', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI', 'ATTACH_FILES'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: ['meme'], // Aliases 
     bankSpace: 15, // Amount of bank space to give when command is used.

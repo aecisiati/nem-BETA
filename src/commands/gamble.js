@@ -126,7 +126,7 @@ module.exports.config = {
     name: 'gamble', // Command Name
     description: 'Gain a whole ton of coins, or lose all your life savings! Input your bet amount, and nem will randomly choose between you winning or losing.', // Description
     usage: 'nem gamble <amount>', // Usage
-    botPerms: [], // Bot permissions needed to run command. Leave empty if nothing.
+    botPerms: ['EMBED_LINKS', 'SEND_MESSAGES', 'EXTERNAL_EMOJI', 'ATTACH_FILES'], // Bot permissions needed to run command. Leave empty if nothing.
     userPerms: [], // User permissions needed to run command. Leave empty if nothing.
     aliases: ['bet'], // Aliases 
     bankSpace: 150, // Amount of bank space to give when command is used.
